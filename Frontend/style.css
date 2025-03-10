@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+  }
+  
+  .container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1000px;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    margin: 20px 0;
+  }
+  
+  #urlInput {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #loadButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  #loadButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .iframe-container {
+    width: 100%;
+    height: 50vh; /* Set the container height to 70% of the viewport height */
+    border: 1px solid #c7c4c4;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  iframe {
+    width: 100%; /* Make the iframe take up 100% of its container's width */
+    height: 100%; /* Make the iframe take up 100% of its container's height */
+    border: none;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(194, 7, 7, 0.884); /* Optional: Add a subtle shadow */
+  }
+  
+  /* Container for all charts */
+.charts-container {
+    width: 100%;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Space between chart boxes */
+    justify-content: center;
+  }
+  
+  /* Box for each chart */
+  .chart-box {
+    background-color: #f9f9f9; /* Light background for the box */
+    border: 1px solid #ddd; /* Border for the box */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 300px; /* Increased width for each box */
+    text-align: center; /* Center align content */
+  }
+
+  .chart-box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  }
+  
+  /* Chart SVG styling */
+  .chart {
+    margin-bottom: 15px; /* Space below the chart */
+  }
+  
+  /* Chart background circle */
+  .chart-background {
+    fill: none;
+    stroke: #eee; /* Light gray for the background circle */
+    stroke-width: 10;
+  }
+  
+  /* Chart progress circle */
+  .chart-progress {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 283; /* 2 * π * r (r = 45) */
+    transition: stroke-dashoffset 0.5s ease, stroke 0.5s ease; /* Smooth transitions */
+  }
+  
+  /* Chart description styling */
+  .chart-description {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0; /* Space above and below the description */
+    color: #333; /* Dark text color */
+  }
+  
+  /* Feedback box styling */
+  .feedback-box {
+    font-size: 15px;
+    color: #1c1a1a; /* Slightly lighter text color */
+    margin-top: 10px; /* Space above the feedback box */
+    padding: 10px; /* Padding inside the feedback box */
+    background-color: #fff; /* White background */
+    border: 1px solid #eee; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    max-height: 500px; /* Limit height */
+    overflow-y: auto; /* Add scroll if content overflows */
+  }

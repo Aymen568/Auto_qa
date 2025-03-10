@@ -1,0 +1,120 @@
+- QA metrics: (given only the frontend part)
+
+	qualitative: functional, reliable, usable, and performs well under various conditions
+	1- Functional Correctness: 
+		Ensures all features, buttons, forms, and links work as intended. Broken functionality directly impacts user experience.
+	1. Functional Correctness (Still Critical)
+
+    What you can test:
+
+        Links, buttons, and navigation.
+
+        Form submissions (if forms are present).
+
+        Interactive elements (e.g., dropdowns, sliders).
+
+        Error handling for user inputs.
+
+    How to measure:
+
+        Manual testing by interacting with the page.
+
+        Automated testing tools like Selenium or Cypress (if you can script tests for the URL).
+
+2. Performance Under Load (Limited but Possible)
+
+    What you can test:
+
+        Frontend performance (e.g., page load time, resource loading).
+
+        API response times (if the page makes visible API calls).
+
+    What you can’t test:
+
+        Database performance or server-side bottlenecks.
+
+    How to measure:
+
+        Use tools like Google PageSpeed Insights, Lighthouse, or GTmetrix to analyze frontend performance.
+
+        Use k6 or JMeter to simulate user load on the frontend (if allowed by the website’s terms of service).
+
+3. Cross-Browser and Cross-Device Compatibility (Still High Importance)
+
+    What you can test:
+
+        Layout and functionality across different browsers (Chrome, Firefox, Safari, Edge).
+
+        Responsiveness on various screen sizes (desktop, tablet, mobile).
+
+    How to measure:
+
+        Use tools like BrowserStack, Sauce Labs, or Responsive Design Checker.
+
+4. Accessibility Compliance (Still High Importance)
+
+    What you can test:
+
+        Keyboard navigation.
+
+        Screen reader compatibility (if you have access to a screen reader).
+
+        Color contrast and font readability.
+
+        Alt text for images.
+
+    How to measure:
+
+        Use tools like WAVE, axe, or Lighthouse to evaluate accessibility.
+
+5. Security (Limited but Possible)
+
+    What you can test:
+
+        Basic frontend vulnerabilities (e.g., XSS if input fields are present).
+
+        SSL/TLS implementation (check for HTTPS and certificate validity).
+
+        Mixed content issues (HTTP resources on an HTTPS page).
+
+    What you can’t test:
+
+        SQL injection or backend vulnerabilities (no database access).
+
+    How to measure:
+
+        Use tools like OWASP ZAP or Burp Suite to scan for frontend vulnerabilities.
+
+        Check SSL/TLS with tools like SSL Labs.
+
+Adjusted Metrics for URL-Only Testing
+
+If you only have the webpage URL, here’s a revised list of 5 key metrics you can measure:
+
+    Functional Correctness: Test all visible features and interactions.
+
+    Frontend Performance: Measure page load time, resource loading, and responsiveness.
+
+    Cross-Browser/Device Compatibility: Verify the page works across browsers and devices.
+
+    Accessibility Compliance: Ensure the page meets accessibility standards.
+
+    Basic Security: Check for HTTPS, mixed content, and frontend vulnerabilities.
+
+Tools for URL-Only Testing
+
+    Functional Testing: Selenium, Cypress, Playwright.
+
+    Performance Testing: Google PageSpeed Insights, Lighthouse, GTmetrix.
+
+    Cross-Browser Testing: BrowserStack, Sauce Labs.
+
+    Accessibility Testing: WAVE, axe, Lighthouse.
+
+    Security Testing: OWASP ZAP, Burp Suite, SSL Labs.
+	
+	
+	Toatal hours: 1 hour 
+	
+	
+	key1: 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

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Website Analyzer</h1>
+    <div class="input-container">
+      <input type="text" id="urlInput" placeholder="Enter website URL you want to evaluate">
+      <button id="loadButton">Load Website</button>
+    </div>
+    <div class="iframe-container">
+      <iframe id="websiteFrame" src=""></iframe>
+    </div>
+    <div class="charts-container">
+        <div class="chart-box">
+          <div class="chart">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" class="chart-background"></circle>
+              <circle cx="50" cy="50" r="45" class="chart-progress" id="chart1"></circle>
+              <text id="score1" x="50" y="55" text-anchor="middle" font-size="20" fill="#333">0</text> <!-- Score display -->
+            </svg>
+            <p class="chart-description">HTML Quality</p>
+            <div class="feedback-box" id="html-feedback"></div> <!-- Feedback box for HTML -->
+          </div>
+        </div>
+      
+        <div class="chart-box">
+          <div class="chart">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" class="chart-background"></circle>
+              <circle cx="50" cy="50" r="45" class="chart-progress" id="chart2"></circle>
+              <text id="score2" x="50" y="55" text-anchor="middle" font-size="20" fill="#333">0</text> <!-- Score display -->
+            </svg>
+            <p class="chart-description">User Experience</p>
+            <div class="feedback-box" id="user-experience-feedback"></div> <!-- Feedback box for User Experience -->
+          </div>
+        </div>
+      
+        <div class="chart-box">
+          <div class="chart">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" class="chart-background"></circle>
+              <circle cx="50" cy="50" r="45" class="chart-progress" id="chart3"></circle>
+              <text id="score3" x="50" y="55" text-anchor="middle" font-size="20" fill="#333">0</text> <!-- Score display -->
+            </svg>
+            <p class="chart-description">Application Security</p>
+            <div class="feedback-box" id="app-security-feedback"></div> <!-- Feedback box for Application Security -->
+          </div>
+        </div>
+      </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
