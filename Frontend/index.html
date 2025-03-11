@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Analyzer</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
   <div class="container">
     <h1>Website Analyzer</h1>
     <div class="input-container">
       <input type="text" id="urlInput" placeholder="Enter website URL you want to evaluate">
-      <button id="loadButton">Load Website</button>
+      <button id="captureButton">screenshot</button>
+      <button id="loadButton">Load Web</button>
     </div>
     <div class="iframe-container">
       <iframe id="websiteFrame" src=""></iframe>

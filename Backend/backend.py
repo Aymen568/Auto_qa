@@ -31,10 +31,20 @@ def encode_image_to_base64(image_path):
 def html_to_image(url, output_path="./screenshot.jpeg"):
     """Convert a webpage to an image using Playwright."""
     with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
+        browser =  p.chromium.launch(headless=True)
+        context = browser.new_context()
+        
+        # Create a new page in the isolated context
+        page = context.new_page()
+        
+        # Navigate to the URL
         page.goto(url)
+        
+        # Take a full-page screenshot
         page.screenshot(path=output_path, full_page=True)
+        
+        # Close the context and browser
+        context.close()
         browser.close()
 
 def scrape_html(url):
@@ -138,10 +148,7 @@ def extract_information(generated_text):
     return score, evaluation
 
 def get_evaluation(prompt,  model , image_path = None,):
-    return  json.dumps({
-                        "score": 3,
-                        "evaluation": "processed"
-                    }, indent=2)
+    
     """Evaluate the frontend HTML for issues and provide a score out of 5."""
     # Refined prompt for better results
     try :
@@ -252,6 +259,31 @@ def evaluate_html():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/take_screenshot', methods=['POST'])
+def take_screenshot():
+    data = request.json
+    print(data  )
+    url = data.get('url')
+    print("url", url  )
+    if not url:
+        return jsonify({"error": "URL is required"}), 400
+
+    try:
+        output_path = "./screenshot.jpeg"
+        html_to_image(url, output_path)
+
+        # Return a success response with the path to the screenshot
+        return jsonify({
+            "status": "success",
+            "message": "Screenshot taken successfully",
+            "screenshot_path": output_path
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+
+
 @app.route('/evaluate_user_experience', methods=['POST'])
 def evaluate_user_experience():
     data = request.json
@@ -262,7 +294,7 @@ def evaluate_user_experience():
         return jsonify({"error": "URL is required"}), 400
 
     try:
-        html_to_image(url)
+        
         prompt = """
         Analyze the user experience (UX) of this webpage and provide a score out of 5 (1 = poor, 5 = excellent). Evaluate the following aspects:
 
