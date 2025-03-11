@@ -146,3 +146,35 @@ iframe {
   flex-grow: 1; /* Allow the feedback box to grow and fill remaining space */
   min-height: 20px;
 }
+.loading-overlay {
+  position: fixed; /* Fixed position to cover the entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center; /* Center the spinner horizontally */
+  align-items: center; /* Center the spinner vertically */
+  z-index: 1000; /* Ensure the overlay is on top of other elements */
+}
+
+/* Spinner styling */
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3); /* Light gray border */
+  border-top: 8px solid #007bff; /* Blue border for the spinner */
+  border-radius: 50%; /* Circular shape */
+  width: 80px; /* Larger size for the spinner */
+  height: 80px; /* Larger size for the spinner */
+  animation: spin 1s linear infinite; /* Spin animation */
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

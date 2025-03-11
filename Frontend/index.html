@@ -12,12 +12,13 @@
     <h1>Website Analyzer</h1>
     <div class="input-container">
       <input type="text" id="urlInput" placeholder="Enter website URL you want to evaluate">
-      <button id="captureButton">screenshot</button>
-      <button id="loadButton">Load Web</button>
+      <button id="captureButton">Snapshot</button>
+      <button id="loadButton">Render</button>
     </div>
     <div class="iframe-container">
       <iframe id="websiteFrame" src=""></iframe>
     </div>
+
     <div class="charts-container">
         <div class="chart-box">
           <div class="chart">
@@ -56,6 +57,9 @@
         </div>
       </div>
   </div>
+  <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+    <div class="spinner"></div>
+  </div>  
   <script src="script.js"></script>
 </body>
 </html>

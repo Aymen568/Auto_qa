@@ -77,14 +77,15 @@ document.getElementById('loadButton').addEventListener('click', async function (
     try {
         // Load the website into the iframe
         document.getElementById('websiteFrame').src = url;
-
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        loadingOverlay.style.display = 'flex';
         // Fetch feedback from all APIs concurrently
         const [userExperienceResponse, htmlResponse, securityResponse] = await Promise.all([
             get_feedback('http://127.0.0.1:5000/evaluate_user_experience', url),
             get_feedback('http://127.0.0.1:5000/evaluate_html', url),
             get_feedback('http://127.0.0.1:5000/evaluate_security', url),
         ]);
-
+        loadingOverlay.style.display = 'none';
         // Destructure responses
         const { score: user_experience_score, feedback: user_experience_feedback } = userExperienceResponse;
         const { score: html_score, feedback: html_feedback } = htmlResponse;
@@ -109,6 +110,9 @@ document.getElementById('loadButton').addEventListener('click', async function (
     } catch (error) {
         console.error('Error:', error);
         alert('An error occurred while fetching feedback. Please try again.');
+    }finally {
+        // Hide the spinner
+        
     }
 });
 
