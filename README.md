@@ -53,7 +53,7 @@ The repository is designed to be user-friendly, allowing you to test the project
     pip install -r requirements.txt
 
 3. **Set Up API Keys**:
-   Create an account on OpenRouter and generate an API key.
+   Create an account on [OpenRouter](https://openrouter.ai/) and generate an API key.
    Replace the placeholder in the .env file with your API key. This file contains all necessary environment variables.
 4. **Run the Application**:
     Start the backend server by running the app.py file:
