@@ -35,7 +35,7 @@ As an initial version, the Auto_QA system evaluates the following key criteria:
 The project leverages the power of **Large Language Models (LLMs)** to automate feedback generation. Currently, the system utilizes two models: **DeepSeek** and **Gemini**. Below is a high-level overview of the system architecture:
 
 <div style="text-align:center">
-    <img src="path/to/architecture_diagram.png" alt="System Architecture">
+    <img src="./Media/architectur.png" alt="System Architecture">
 </div>
 
 ---
